@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+            background-color: #f4f4f8;
+        }
+        
+        main {
+            max-width: max-content;
+        }
+        
+        .heading {
+            text-decoration: underline;
+            font-family: Lato, sans-serif;
+            font-size: x-large;
+        }
+        
+        @media (max-width: 225px) {
+            .heading {
+                word-break: break-all;
+            }
+        }
+        
+        main .header {
+            padding: 1rem;
+            border-top-right-radius: 0.5rem;
+            border-top-left-radius: 0.5rem;
+            background-color: #b9f85b;
+        }
+        
+        main .link-info {
+            background-color: #e6e6ea;
+            border-bottom-right-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+        }
+        
+        main .link-info .basic-info {
+            margin-left: 1.2rem;
+            padding: 0.5rem;
+            font-family: Lato, sans-serif;
+            font-size: large;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        main .link-info .divide-line {
+            width: 95%;
+            height: 2px;
+            background-color: #2ab7ca;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0.5rem;
+        }
+        
+        main .link-info .redirect-path-container {
+            margin-left: 1.2rem;
+            padding: 1rem;
+        }
+        
+        main .link-info .redirect-path-container .redirect-path {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            font-size: large;
+            text-align: center;
+            font-family: Lato, sans-serif;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <title>Link Report</title>
+</head>
+
+<body>
+    <h1 class="heading">Link Report for <a href="" id="url">-</a></h1>
+    <main>
+        <div class="header">
+            <h2 class="link-status" id="link-status">-</h2>
+            <h3 class="link-status-desc" id="link-status-desc" style="font-weight: bold">
+                --
+            </h3>
+        </div>
+        <div class="link-info">
+            <ul class="basic-info">
+                <li id="amount-of-redirects">Amount of redirects: -</li>
+            </ul>
+            <div class="divide-line"></div>
+            <div class="redirect-path-container">
+                <ul class="redirect-path"></ul>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

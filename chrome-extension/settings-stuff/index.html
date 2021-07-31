@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Lato, sans-serif;
+        }
+        
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f8;
+            padding: 2rem;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        main {
+            padding: 1rem;
+            background: #a8a8a8;
+            border-radius: 1rem;
+        }
+        
+        .title {
+            font-size: xx-large;
+            text-decoration: underline;
+            text-decoration-color: #2ab7ca;
+        }
+        
+        .settings-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 735px;
+        }
+        
+        .user-agent-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .user-agent-label,
+        .filtered-domains-label {
+            font-size: large;
+            font-weight: bolder;
+        }
+        
+        #user-agent-dropdown {
+            width: 90%;
+        }
+        
+        .filtered-domains-container {
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .filtered-domains-list {
+            font-weight: bold;
+            font-size: larger;
+        }
+        
+        .filtered-domains-container .list-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        select {
+            background-color: #e6e6ea;
+            border: none;
+            padding: 0.5em;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        
+        button {
+            border: none;
+            padding: 0.5em;
+            background-color: #e6e6ea;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        
+        button:hover,
+        select:hover {
+            background-color: #a3a3a3;
+        }
+        
+        @media (max-width: 305px) {
+            .user-agent-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .filtered-domains-container {
+                text-align: center;
+            }
+            .filtered-domains-container .list-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <title>Settings</title>
+</head>
+
+<body>
+    <h2 class="title">Settings</h2>
+    <main class="settings-container">
+        <div class="user-agent-container">
+            <label for="user-agent-dropdown" class="user-agent-label">User Agent:</label
+        >
+        <select name="user-agent-dropdown" id="user-agent-dropdown">
+          <option value="default" selected>
+            SafeLink Redirect Checker 1.0
+          </option>
+          <option value="browser"></option>
+        </select>
+      </div>
+      <div class="filtered-domains-container">
+        <label class="filtered-domains-label">Filtered Domains:</label>
+            <ul class="filtered-domains-list"></ul>
+            <div class="list-buttons">
+                <button class="add" id="add-button">Add</button>
+                <button class="remove" id="remove-button">Remove</button>
+            </div>
+        </div>
+
+        <button class="save-button" id="save-button">Save changes</button>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
